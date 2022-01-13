@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid Red;
+}
+</style>
+</head>
+<body style="background-color:powderblue;">
+{% extends 'base.html' %}
+{% block context %}
+
+<table align="center">
+    <caption><h1>Employee Details</h1></caption>
+    <thead>
+        <th>Sl.No.</th>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th>Address</th>
+        <th>Update/Delete</th>
+    </thead>
+    <tr>
+    {% for data in employee %}
+        <td align="center">{{forloop.counter}}</td>
+        <td align="center">{{data.empNo}}</td>
+        <td>{{data.empName}}</td>
+        <td align="right">{{data.empSalary}}</td>
+        <td>{{data.empAddress}}</td>
+        <td><a href="./update/{{data.id}}">Update</a> <a href="./delete/{{data.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+<br>
+<br>
+    <a href = "./home"><button type="button"><h3>Home</h3></button> </a>
+    {% endblock %}
+
+</body>
+</html>

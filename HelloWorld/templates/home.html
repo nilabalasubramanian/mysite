@@ -1,0 +1,25 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid Red;
+}
+</style>
+</head>
+<body style="background-color:powderblue;">
+{% extends 'base.html' %}
+{% block context %}
+<h1 align="center">Welcome to Employee Management Application</h1>
+<p><h3>This is the home page of Employee management Application.</h3></p>
+<p><h3>This application helps to manage employee information such as Add, Update, Retrieve and Delete</h3></p>
+
+<a href = "./create"><button type="button"><b>Add New Employee Information</b></button> </a>
+<br>
+<br>
+<a href = "./display"><button type="button"><b>Display Employee Information</b></button> </a>
+
+  {% endblock %}
+
+
+</body>
+</html>
